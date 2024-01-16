@@ -1,0 +1,20 @@
+[tool.black]
+target-version = ['py38', 'py39', 'py310', 'py311', 'py312']
+line-length = 120
+include = '\.pyi?$'
+exclude = '''
+    /(
+        \.git
+        | \.venv
+        | _build
+        | buck-out
+        | build
+        | dist
+        | .sh
+        | .yaml
+        | __pycache__
+    )/
+'''
+
+[tool.isort]
+line_length = 120

@@ -1,0 +1,13 @@
+# Cache
+.pytest_cache
+__pycache__
+.DS_Store
+
+# Env
+.env
+
+# TMP
+tmp
+
+# DB
+db.sqlite3

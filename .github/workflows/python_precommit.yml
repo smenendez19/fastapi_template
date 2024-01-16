@@ -1,0 +1,28 @@
+name: Python Precommit
+
+on:
+  pull_request:
+    branches:
+      - develop
+      - main
+jobs:
+  run-linters:
+    name: Run linters
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.12
+      - name: Install Python dependencies
+        run: pip install black==22.12.0 flake8==6.0.0
+      - name: Run linters
+        uses: wearerequired/lint-action@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          black: true
+          black_args: "--line-length=120"
+          flake8: true
+          flake8_args: "--max-line-length=120 --max-complexity=20 --ignore=E203,E266,E501,W503,F403,F401,E501,C901,E722 --select=B,C,E,F,W,T4,B9"
