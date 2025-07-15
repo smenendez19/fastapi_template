@@ -2,12 +2,24 @@
 .pytest_cache
 __pycache__
 .DS_Store
+.cache
 
-# Env
+# Environment files
 .env
 
-# TMP
+# Temporary files
 tmp
 
-# DB
+# Database
 db.sqlite3
+
+# Test results
+test-results.xml
+
+# Coverage reports
+coverage.xml
+.coverage
+
+# Virtual Environment
+venv
+.venv
